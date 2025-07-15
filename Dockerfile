@@ -1,7 +1,5 @@
-FROM oznu/homebridge:latest
+FROM homebridge/homebridge:ubuntu
 
-EXPOSE 8581
-
-ENV HOMEBRIDGE_CONFIG_UI_PORT=8581
-
-CMD ["homebridge", "-I", "-U", "/homebridge", "-C", "-D", "--port", "8581", "--host", "0.0.0.0"]
+RUN apt-get update && apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs
