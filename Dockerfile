@@ -1,0 +1,5 @@
+FROM oznu/homebridge:latest
+
+EXPOSE 8581
+
+ENV HOMEBRIDGE_CONFIG_UI_PORT=8581
